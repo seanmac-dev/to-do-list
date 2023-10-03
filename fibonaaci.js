@@ -1,3 +1,5 @@
+//Fibonacci sequence
+
 function fibonacci(num) {
   //Array to begin Fibonacci Sequence
   fibArr = [0, 1];
