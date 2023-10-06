@@ -2,7 +2,10 @@
 
 // empty objects for task list, emojis, 
 
-const taskAdd = require("./todo_manager.js")
+// const taskAdd = require("./todo_manager.js")
+// const taskComplete = require("./todo_manager.js")
+
+const {taskAdd, taskComplete} = require('./todo_manager.js')
 
 // test the add feature
 
@@ -12,10 +15,10 @@ const taskAdd = require("./todo_manager.js")
     })
 //})
 
-// code the mark done feature
-    // test("mark the task complete", () => {
-    //     expect(taskComplete('complete')).toBe(true)
-    // })
+//code the mark done feature
+    test("mark the task complete", () => {
+        expect(taskComplete('complete')).toBe(true)
+    })
 // code the remove feature
 //     test("remove task", () => {
 //         expect(taskRemove('complete')).toBe(true)
@@ -24,3 +27,4 @@ const taskAdd = require("./todo_manager.js")
 //     test("view list", () => {
 //         expect(viewList('complete')).toBe(true)
 //     })
+
