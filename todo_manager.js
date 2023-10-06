@@ -23,31 +23,32 @@ const viewList = () => {
     return Object.keys(task)
 }
 
-
-
-//prompt for userInput
+// BEGIN PASTED CODE
+//prompt for userInput that was pasted in for basic functionality
 const toDoListShell = () => {
     //let selection = prompt("Enter 1: Add a task \n Enter 2: Modify \n Enter 3: Delete\n Enter 4: View List")
-    const readline = require("readline");
+    const readline = require("readline"); // keep this
 
     // create interface for input and output
-    const rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout,
+    const rl = readline.createInterface({ // keep this
+      input: process.stdin, //keep this
+      output: process.stdout, // keep this
     });
     
     // create empty user input
-    let userInput = "";
+    let userInput = ""; // I think we can change this to be 'selection'
     
     // question user to enter name
-    rl.question("What is your name\n", function (string) {
-      userInput = string;
+    rl.question("What is your name\n", function (string) { // this is to be modified display our menu
+      userInput = string; // keep this
     
-      console.log("Your name is " + userInput);
+      console.log("Your name is " + userInput); // this would actually be our function call
     
       // close input stream
-      rl.close();
+      rl.close(); // keep this
+// END OF PASTED CODE
 
+      1
     });
     // if (selection === '1'){
     //    let taskName = prompt("Enter a task");
