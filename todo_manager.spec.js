@@ -5,7 +5,7 @@
 // const taskAdd = require("./todo_manager.js")
 // const taskComplete = require("./todo_manager.js")
 
-const {taskAdd, taskComplete} = require('./todo_manager.js')
+const {taskAdd, taskComplete, viewList, taskRemove} = require('./todo_manager.js')
 
 // test the add feature
 
@@ -20,11 +20,11 @@ const {taskAdd, taskComplete} = require('./todo_manager.js')
         expect(taskComplete('complete')).toBe(true)
     })
 // code the remove feature
-//     test("remove task", () => {
-//         expect(taskRemove('complete')).toBe(true)
-//     })
+    test("remove task", () => {
+        expect(taskRemove('complete')).toBe(undefined)
+    })
 // // code the view feature
-//     test("view list", () => {
-//         expect(viewList('complete')).toBe(true)
-//     })
+    // test("view list", () => {
+    //     expect(viewList('complete')).toBe(Object.keys(task))
+    // })
 
