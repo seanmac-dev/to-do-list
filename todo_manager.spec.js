@@ -8,12 +8,14 @@ const todoManager = require("./todo_manager.js")
 
 //describe("tests adding task", () => {
     test("add something", () => {
-        expect(todoManager('something')).toBe(false)
+        expect(taskAdd('something')).toBe(false)
     })
 //})
 
 // code the mark done feature
-
+    test("mark the task complete", () => {
+        expect(taskComplete('complete')).toBe(true)
+    })
 // code the remove feature
 
 // code the view feature
