@@ -16,6 +16,11 @@ from to_do import to_do, add_item, exit_program, view_list, mark_as_done, delete
 #def test_view_list():
 #    assert view_list() == 'tasks'
 
+def test_add_item(monkeypatch):
 
+    monkeypatch.setattr('builtins.input', lambda _:'Ernesto')
 
-#run with python -m pytest test_to_do.py
+    result = add_item()
+
+    assert result == "Ernesto"
+
