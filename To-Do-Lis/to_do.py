@@ -3,43 +3,51 @@ tasks = {}
 
 def to_do():
    
+    n = True
 
-    menu_prompt ='To do list options: \n 1.Add an item\n 2.Mark Task as Complete \n 3.Delete Task \n 4.View Task \n 5.Exit \nPlease enter an option: '
+    while n == True:
+        menu_prompt ='To do list options: \n 1.Add an item\n 2.Mark Task as Complete \n 3.Delete Task \n 4.View Task \n 5.Exit \nPlease enter an option: '
 
-    
+        user_input = input(menu_prompt)
 
-    user_input = input(menu_prompt)
+        if user_input == '1':
+            to_do_name = input('Please enter task name: ')
+            add_item(to_do_name)     
+        elif user_input == '2':
+            to_cross_off = input('Please enter task to cross off: ')
+            mark_as_done(to_cross_off)
+        elif user_input == '3':
+            to_delete = input('What task do you want to delete?')
+            delete_Task(to_delete)
+        elif user_input == '4':
+            view_list()
+        elif user_input == '5':
+          
+            n = False
+        else:
+            print('Invalid Input')
 
-    if user_input == '1':
-        to_do_name = input('Please enter task name: ')
-        add_item(to_do_name)     
-    elif user_input == '2':
-        mark_as_done()
-    elif user_input == '3':
-        delete_Task()
-    elif user_input == '4':
-        view_list()
-    else:
-        print('Invalid Input')
 
-    to_do()
 
 
 
 def add_item(to_do_name):
    
     tasks[to_do_name] = False
-    print(list(tasks))
+    print('Task Added')
     to_do()
 
 def mark_as_done(to_do_name):
-    tasks[to_do_name] = False
-    return tasks[to_do_name]
+    #check if the item is on list
+    if to_do_name in tasks:
+        tasks[to_do_name] = True
+        cross_off = f'X {to_do_name}'
+        tasks[cross_off] = tasks[to_do_name]
+        del tasks[to_do_name]
+        to_do()
 
 def delete_Task(to_do_name):
-    tasks[to_do_name] = False
-    #remove to_do_name from list
-    return False
+    del tasks[to_do_name]
 
 def view_list():
     print(tasks)
